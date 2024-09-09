@@ -1,0 +1,93 @@
+/* For Desktop View */
+@media screen and (min-width: 1200px) {
+	.container {
+		max-width: 1196px;
+	}
+}
+
+/* For Tablet View */
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+	.container {
+		max-width: 980px;
+	}
+}
+
+/* For Mobile View */
+@media screen and (max-width: 992px) {
+	header {
+		margin-bottom: 0;
+	}
+
+	.bg-shape-1,
+	.bg-shape-2 {
+		display: none;
+	}
+
+	nav {
+		justify-content: center;
+	}
+
+	.container {
+		max-width: 100%;
+	}
+
+	.content {
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+	}
+
+	.card {
+		border-color: transparent;
+		border-radius: 0;
+	}
+
+	.sidebar-container {
+		gap: 0px;
+		position: initial;
+	}
+}
+
+/* Small screens */
+@media screen and (max-width: 520px) {
+	header {
+		display: none;
+	}
+
+	.timeline::after {
+		left: 10px;
+	}
+
+	.timeline-content {
+		box-shadow: none;
+	}
+
+	.timeline-item {
+		width: 100%;
+		padding-right: 0px;
+	}
+
+	.timeline-item.right::before,
+	.timeline-item.left::before {
+		left: 22px;
+		border: medium solid transparent;
+		border-width: 10px 10px 10px 0;
+		border-color: transparent rgba(255, 223, 0, 1) transparent transparent;
+	}
+
+	.timeline-item.left::after,
+	.timeline-item.right::after {
+		left: 0px;
+	}
+
+	.timeline-item.right {
+		left: 0%;
+	}
+}
+
+/* Reduced Motion */
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}

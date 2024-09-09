@@ -1,0 +1,419 @@
+/* Global */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	letter-spacing: 1.1px;
+	font-size: 18px;
+}
+
+*,
+:after,
+:before {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: 111px;
+}
+
+body {
+	font-family: "Poppins", sans-serif;
+	background-color: rgb(250, 250, 250);
+}
+
+h1,
+h2,
+h3 {
+	color: #fe662b;
+}
+
+h1 {
+	font-size: 1.5rem;
+}
+
+h2 {
+	font-size: 1.275rem;
+}
+
+h3 {
+	color: rgb(65, 65, 65);
+	font: 0.9rem;
+}
+
+h4 {
+	color: rgb(85, 85, 85);
+	font-size: 0.8rem;
+	text-transform: uppercase;
+	text-decoration: underline;
+	text-underline-offset: 8px;
+	margin-bottom: 12px;
+}
+
+p,
+li {
+	color: rgb(85, 85, 85);
+	font-size: 0.9rem;
+	line-height: 2;
+}
+
+/* Common */
+
+.container {
+	margin: 0 auto;
+}
+
+.btn {
+	color: rgb(85, 85, 85);
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 1.6;
+	padding: 8px 24px;
+	text-decoration: none;
+
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	background: 0 0;
+
+	border: 2px solid rgba(255, 223, 0, 1);
+	border-radius: 36px;
+	cursor: pointer;
+
+	box-shadow: transparent 0 0 0;
+	transition: all 200ms ease;
+}
+
+.btn:hover {
+	color: rgb(25, 25, 25);
+	box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+	background-color: rgba(255, 223, 0, 0.2);
+}
+
+.btn:active {
+	color: rgb(25, 25, 25);
+	box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25) inset;
+}
+
+.btn img {
+	width: 16px;
+	height: auto;
+}
+
+/* Card */
+
+.card {
+	padding: 24px;
+	border: 1px solid rgb(225, 225, 225);
+	border-radius: 4px;
+	background-color: white;
+}
+
+/* Header */
+
+header {
+	padding: 12px 0;
+	position: sticky;
+	top: 0;
+	background-color: rgb(250, 250, 250);
+	box-shadow: -4px 2px 15px 1px rgba(0, 0, 0, 0.2);
+	margin-bottom: 32px;
+	z-index: 2;
+}
+
+nav {
+	display: flex;
+	gap: 24px;
+	padding: 12px 0;
+	justify-content: end;
+}
+
+nav .link {
+	font-weight: 700;
+}
+
+.link {
+	color: rgb(85, 85, 85);
+	text-decoration: none;
+	display: flex;
+	gap: 4px;
+	align-items: center;
+	position: relative;
+	padding-bottom: 4px;
+	transition: all 500ms ease;
+}
+
+.link::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 0.1rem;
+	background-color: rgba(255, 223, 0, 1);
+	opacity: 0;
+	transform: scale(0);
+	transform-origin: center;
+	transition: opacity 500ms ease, transform 500ms ease;
+}
+
+.link:hover {
+	color: black;
+}
+
+.link:hover::after,
+.link:focus::after {
+	opacity: 1;
+	transform: scale(1);
+}
+
+.link img {
+	width: 16px;
+	height: auto;
+}
+
+.image-link {
+	text-decoration: none;
+}
+
+.image-link img {
+	width: 24px;
+	height: auto;
+	filter: grayscale(1);
+	transition: all 500ms ease;
+}
+
+.image-link:hover img {
+	filter: grayscale(0);
+}
+
+/* Timeline */
+.timeline {
+	position: relative;
+}
+
+.timeline::after {
+	content: "";
+	position: absolute;
+	width: 4px;
+	top: 0;
+	bottom: 0;
+	left: 50%;
+	margin-left: -3px;
+	background-color: rgb(243, 243, 243);
+}
+
+.timeline-item {
+	padding: 10px 32px;
+	position: relative;
+	background-color: inherit;
+	width: 50%;
+}
+
+.timeline-item::after {
+	content: "";
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	right: -8px;
+	background-color: white;
+	border: 3px solid #fe662b;
+	top: 15px;
+	border-radius: 50%;
+	z-index: 1;
+}
+
+.timeline-item.right::after {
+	left: -10px;
+}
+
+.timeline-item::before {
+	content: " ";
+	height: 0;
+	position: absolute;
+	top: 15px;
+	width: 0;
+	z-index: 1;
+	border: medium solid transparent;
+}
+
+.timeline-item.left::before {
+	right: 22px;
+	border-width: 10px 0 10px 10px;
+	border-color: transparent transparent transparent rgba(255, 223, 0, 1);
+}
+
+.timeline-item.right::before {
+	left: 22px;
+	border-width: 10px 10px 10px 0;
+	border-color: transparent rgba(255, 223, 0, 1) transparent transparent;
+}
+
+.timeline-item.left {
+	left: 0;
+}
+
+.timeline-item.right {
+	left: 50%;
+}
+
+.timeline-content {
+	padding: 12px 18px;
+	border: 2px solid rgba(255, 223, 0, 1);
+	position: relative;
+	border-radius: 6px;
+	box-shadow: -4px 2px 15px 1px rgba(0, 0, 0, 0.2);
+	transition: all 500ms ease;
+}
+
+.timeline-content:hover {
+	background-color: rgba(255, 223, 0, 0.2);
+}
+
+.timeline-content a {
+	display: inline;
+	font-size: 0.8rem;
+}
+
+/* Content */
+
+.content {
+	display: grid;
+	grid-template-columns: minmax(300px, 1fr) minmax(0, 3fr);
+	column-gap: 32px;
+}
+
+/* Side bar */
+
+.sidebar-container {
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+	position: sticky;
+	top: 111px;
+}
+
+.info,
+.resume {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	align-items: center;
+	box-shadow: -4px 7px 15px 1px rgba(0, 0, 0, 0.2);
+}
+
+.info {
+	background-color: rgb(245, 239, 194);
+}
+
+.info-details {
+	text-align: center;
+}
+
+.info-details h2 {
+	color: rgb(25, 25, 25);
+}
+
+.info-links {
+	display: flex;
+	gap: 12px;
+}
+
+.picture {
+	width: 100%;
+	height: auto;
+	max-width: 200px;
+	border-radius: 50%;
+}
+
+/* Main */
+
+.main {
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+	margin-bottom: 40vh;
+}
+
+/* About */
+
+.description {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	padding: 12px 0;
+}
+
+/* Skills */
+
+.skill-lists {
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+	margin-top: 24px;
+}
+
+.skill-list {
+	list-style-type: none;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.skill-list li {
+	display: flex;
+	align-items: center;
+}
+
+.skill-list li:not(:last-child)::after {
+	content: "\00B7";
+	font-size: 3rem;
+	line-height: 0;
+	margin: 0 4px;
+	color: rgb(219, 190, 2);
+}
+
+/* Experience */
+#experience {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+/* Education */
+
+#education {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+/* Background */
+
+.bg-shape-1,
+.bg-shape-2 {
+	top: 0;
+	position: fixed;
+	z-index: -1;
+}
+
+.bg-shape-1 {
+	left: 0;
+}
+
+.bg-shape-2 {
+	top: -100px;
+	right: -100px;
+}
+
+.bg-shape-1 polygon {
+	fill: #e65f59;
+}
+
+.bg-shape-2 polygon {
+	fill: #acb0ad;
+}
