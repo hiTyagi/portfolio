@@ -377,6 +377,13 @@ nav .link {
 	color: rgb(219, 190, 2);
 }
 
+.skill-list li img.list-type {
+	width: 20px;
+	height: auto;
+	display: none;
+	margin-right: 8px;
+}
+
 /* Experience */
 #experience {
 	display: flex;

@@ -83,6 +83,18 @@
 	.timeline-item.right {
 		left: 0%;
 	}
+
+	.skill-list.skill-list-professional {
+		flex-direction: column;
+	}
+
+	.skill-list.skill-list-professional li::after {
+		content: "";
+	}
+
+	.skill-list li img.list-type {
+		display: inline;
+	}
 }
 
 /* Reduced Motion */
